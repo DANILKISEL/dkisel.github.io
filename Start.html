@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Mini App</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .full-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="full-screen">
+        <h1>Welcome to My Telegram Mini App!</h1>
+        <button id="actionButton">Click Me!</button>
+    </div>
+
+    <script>
+        // Check if the app is running in Telegram
+        if (window.Telegram.WebApp) {
+            // Set the app to full screen
+            Telegram.WebApp.expand();
+        }
+
+        // Add button action
+        document.getElementById('actionButton').addEventListener('click', function() {
+            alert('Button clicked!');
+        });
+    </script>
+</body>
+</html>
